@@ -1,0 +1,17 @@
+Makefile
+*.sgf
+*~
+*.diff
+*.orig
+*.rej
+autom4te.cache
+/config.*
+/libtool
+/src/.deps/*
+/src/*.o
+/src/*.moc.cc
+/src/*_gui.h
+/src/gui_*.h
+/src/q4go
+/src/q4go.rcc.cc
+/stamp-h1

@@ -1,0 +1,1579 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+  <class>ClientWindowGui</class>
+  <widget class="QMainWindow" name="ClientWindowGui">
+    <property name="geometry">
+      <rect>
+	<x>0</x>
+	<y>0</y>
+	<width>773</width>
+	<height>591</height>
+      </rect>
+    </property>
+    <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+	<horstretch>0</horstretch>
+	<verstretch>0</verstretch>
+      </sizepolicy>
+    </property>
+    <property name="windowTitle">
+      <string>qGo Client V2</string>
+    </property>
+    <property name="windowIcon">
+      <iconset resource="q4go.qrc">
+      <normaloff>:/ClientWindowGui/images/clientwindow/qgo.png</normaloff>:/ClientWindowGui/images/clientwindow/qgo.png</iconset>
+    </property>
+    <widget class="QWidget" name="widget">
+      <layout class="QGridLayout">
+	<property name="leftMargin">
+	  <number>0</number>
+	</property>
+	<property name="topMargin">
+	  <number>0</number>
+	</property>
+	<property name="rightMargin">
+	  <number>0</number>
+	</property>
+	<property name="bottomMargin">
+	  <number>0</number>
+	</property>
+	<item row="0" column="0">
+	  <widget class="QSplitter" name="s1">
+	    <property name="sizePolicy">
+	      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+		<horstretch>0</horstretch>
+		<verstretch>0</verstretch>
+	      </sizepolicy>
+	    </property>
+	    <property name="orientation">
+	      <enum>Qt::Horizontal</enum>
+	    </property>
+	    <widget class="QSplitter" name="s2">
+	      <property name="orientation">
+		<enum>Qt::Vertical</enum>
+	      </property>
+	      <widget class="QGroupBox" name="groupBox1">
+		<property name="sizePolicy">
+		  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+		    <horstretch>0</horstretch>
+		    <verstretch>0</verstretch>
+		  </sizepolicy>
+		</property>
+		<property name="title">
+		  <string>Players</string>
+		</property>
+		<layout class="QGridLayout">
+		  <property name="leftMargin">
+		    <number>3</number>
+		  </property>
+		  <property name="topMargin">
+		    <number>3</number>
+		  </property>
+		  <property name="rightMargin">
+		    <number>3</number>
+		  </property>
+		  <property name="bottomMargin">
+		    <number>3</number>
+		  </property>
+		  <item row="0" column="0" colspan="2">
+		    <widget class="PlayerTable" name="ListView_players" native="true">
+		      <property name="sizePolicy">
+			<sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+			  <horstretch>0</horstretch>
+			  <verstretch>0</verstretch>
+			</sizepolicy>
+		      </property>
+		      <property name="minimumSize">
+			<size>
+			  <width>0</width>
+			  <height>10</height>
+			</size>
+		      </property>
+		    </widget>
+		  </item>
+		  <item row="1" column="0" colspan="2">
+		    <layout class="QHBoxLayout" name="horizontalLayout">
+		      <item>
+			<widget class="QLabel" name="label_2">
+			  <property name="text">
+			    <string>From:</string>
+			  </property>
+			</widget>
+		      </item>
+		      <item>
+			<widget class="QComboBox" name="whoBox1">
+			  <property name="toolTip">
+			    <string>Select players rank boundaries</string>
+			  </property>
+			  <property name="whatsThis">
+			    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Select players ranks boundaries&lt;/p&gt;&lt;p&gt;Use these lists to select the rank of players you want to see in the list. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+			  </property>
+			  <property name="currentIndex">
+			    <number>24</number>
+			  </property>
+			  <item>
+			    <property name="text">
+			      <string/>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>1p-9p</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>9d</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>8d</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>7d</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>6d</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>5d</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>4d</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>3d</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>2d</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>1d</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>1k</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>2k</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>3k</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>4k</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>5k</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>6k</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>7k</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>8k</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>9k</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>10k</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>15k</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>20k</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>25k</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>30k</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>BC</string>
+			    </property>
+			  </item>
+			</widget>
+		      </item>
+		      <item>
+			<widget class="QLabel" name="label">
+			  <property name="text">
+			    <string>To:</string>
+			  </property>
+			</widget>
+		      </item>
+		      <item>
+			<widget class="QComboBox" name="whoBox2">
+			  <property name="toolTip">
+			    <string>Select players rank boundaries</string>
+			  </property>
+			  <property name="whatsThis">
+			    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Select players ranks boundaries&lt;/p&gt;&lt;p&gt;Use these lists to select the rank of players you want to see in the list. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+			  </property>
+			  <property name="currentIndex">
+			    <number>1</number>
+			  </property>
+			  <item>
+			    <property name="text">
+			      <string/>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>1p-9p</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>9d</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>8d</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>7d</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>6d</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>5d</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>4d</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>3d</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>2d</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>1d</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>1k</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>2k</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>3k</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>4k</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>5k</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>6k</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>7k</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>8k</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>9k</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>10k</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>15k</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>20k</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>25k</string>
+			    </property>
+			  </item>
+			  <item>
+			    <property name="text">
+			      <string>30k</string>
+			    </property>
+			  </item>
+			</widget>
+		      </item>
+		      <item>
+			<widget class="QCheckBox" name="whoOpenCheck">
+			  <property name="toolTip">
+			    <string>toggle for displaying only open players</string>
+			  </property>
+			  <property name="whatsThis">
+			    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Open players&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Check this box if you want the list to display only open players (uncheck if you want all players).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+			  </property>
+			  <property name="text">
+			    <string>open</string>
+			  </property>
+			</widget>
+		      </item>
+		      <item>
+			<spacer name="horizontalSpacer">
+			  <property name="orientation">
+			    <enum>Qt::Horizontal</enum>
+			  </property>
+			  <property name="sizeHint" stdset="0">
+			    <size>
+			      <width>40</width>
+			      <height>20</height>
+			    </size>
+			  </property>
+			</spacer>
+		      </item>
+		    </layout>
+		  </item>
+		</layout>
+	      </widget>
+	      <widget class="QTabWidget" name="TabWidget_mini_2">
+		<property name="tabPosition">
+		  <enum>QTabWidget::South</enum>
+		</property>
+		<widget class="QWidget" name="rooms">
+		  <attribute name="title">
+		    <string>Rooms*</string>
+		  </attribute>
+		  <layout class="QGridLayout">
+		    <property name="leftMargin">
+		      <number>0</number>
+		    </property>
+		    <property name="topMargin">
+		      <number>0</number>
+		    </property>
+		    <property name="rightMargin">
+		      <number>0</number>
+		    </property>
+		    <property name="bottomMargin">
+		      <number>0</number>
+		    </property>
+		    <item row="1" column="1">
+		      <widget class="QPushButton" name="LeaveRoomButton">
+			<property name="maximumSize">
+			  <size>
+			    <width>22</width>
+			    <height>22</height>
+			  </size>
+			</property>
+			<property name="text">
+			  <string/>
+			</property>
+			<property name="icon">
+			  <iconset resource="q4go.qrc">
+			  <normaloff>:/ClientWindowGui/images/clientwindow/image1.xpm</normaloff>:/ClientWindowGui/images/clientwindow/image1.xpm</iconset>
+			</property>
+		      </widget>
+		    </item>
+		    <item row="0" column="0" colspan="2">
+		      <widget class="QListWidget" name="RoomList"/>
+		    </item>
+		  </layout>
+		</widget>
+		<widget class="QWidget" name="messages">
+		  <attribute name="title">
+		    <string>Msg*</string>
+		  </attribute>
+		  <layout class="QVBoxLayout">
+		    <property name="leftMargin">
+		      <number>0</number>
+		    </property>
+		    <property name="topMargin">
+		      <number>0</number>
+		    </property>
+		    <property name="rightMargin">
+		      <number>0</number>
+		    </property>
+		    <property name="bottomMargin">
+		      <number>0</number>
+		    </property>
+		    <item>
+		      <widget class="QTextBrowser" name="MultiLineEdit3">
+			<property name="sizePolicy">
+			  <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+			    <horstretch>0</horstretch>
+			    <verstretch>0</verstretch>
+			  </sizepolicy>
+			</property>
+		      </widget>
+		    </item>
+		    <item>
+		      <widget class="QPushButton" name="pb_releaseTalkTabs">
+			<property name="text">
+			  <string>Close all talk tabs</string>
+			</property>
+		      </widget>
+		    </item>
+		  </layout>
+		</widget>
+	      </widget>
+	    </widget>
+	    <widget class="QSplitter" name="s3">
+	      <property name="orientation">
+		<enum>Qt::Vertical</enum>
+	      </property>
+	      <widget class="QGroupBox" name="groupBox2">
+		<property name="title">
+		  <string>Games</string>
+		</property>
+		<layout class="QGridLayout">
+		  <property name="leftMargin">
+		    <number>3</number>
+		  </property>
+		  <property name="topMargin">
+		    <number>3</number>
+		  </property>
+		  <property name="rightMargin">
+		    <number>3</number>
+		  </property>
+		  <property name="bottomMargin">
+		    <number>3</number>
+		  </property>
+		  <item row="0" column="0">
+		    <widget class="GamesTable" name="ListView_games" native="true">
+		      <property name="sizePolicy">
+			<sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+			  <horstretch>0</horstretch>
+			  <verstretch>0</verstretch>
+			</sizepolicy>
+		      </property>
+		    </widget>
+		  </item>
+		</layout>
+	      </widget>
+	      <widget class="QWidget" name="layout1">
+		<layout class="QGridLayout">
+		  <property name="leftMargin">
+		    <number>0</number>
+		  </property>
+		  <property name="topMargin">
+		    <number>0</number>
+		  </property>
+		  <property name="rightMargin">
+		    <number>0</number>
+		  </property>
+		  <property name="bottomMargin">
+		    <number>0</number>
+		  </property>
+		  <property name="spacing">
+		    <number>0</number>
+		  </property>
+		  <item row="0" column="0">
+		    <widget class="QTextBrowser" name="MultiLineEdit2">
+		      <property name="sizePolicy">
+			<sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+			  <horstretch>0</horstretch>
+			  <verstretch>0</verstretch>
+			</sizepolicy>
+		      </property>
+		      <property name="toolTip">
+			<string>relevant messages from/to server</string>
+		      </property>
+		    </widget>
+		  </item>
+		  <item row="1" column="0">
+		    <widget class="QComboBox" name="cb_cmdLine">
+		      <property name="editable">
+			<bool>true</bool>
+		      </property>
+		      <property name="insertPolicy">
+			<enum>QComboBox::InsertAtTop</enum>
+		      </property>
+		      <property name="duplicatesEnabled">
+			<bool>true</bool>
+		      </property>
+		    </widget>
+		  </item>
+		</layout>
+	      </widget>
+	    </widget>
+	  </widget>
+	</item>
+      </layout>
+    </widget>
+    <widget class="QToolBar" name="FileToolbar">
+      <property name="windowTitle">
+	<string>File toolbar</string>
+      </property>
+      <attribute name="toolBarArea">
+	<enum>TopToolBarArea</enum>
+      </attribute>
+      <attribute name="toolBarBreak">
+	<bool>false</bool>
+      </attribute>
+      <addaction name="fileNewBoard"/>
+      <addaction name="fileNew"/>
+      <addaction name="fileNewVariant"/>
+      <addaction name="fileOpen"/>
+      <addaction name="separator"/>
+      <addaction name="fileBatchAnalysis"/>
+      <addaction name="computerPlay"/>
+    </widget>
+    <widget class="QToolBar" name="Toolbar">
+      <property name="windowTitle">
+	<string>Main toolbar</string>
+      </property>
+      <attribute name="toolBarArea">
+	<enum>TopToolBarArea</enum>
+      </attribute>
+      <attribute name="toolBarBreak">
+	<bool>false</bool>
+      </attribute>
+      <widget class="QToolButton" name="toolConnect">
+        <property name="text">
+          <string/>
+        </property>
+        <property name="checkable">
+          <bool>true</bool>
+        </property>
+	<property name="icon">
+	  <iconset resource="q4go.qrc">
+	  <normaloff>:/ClientWindowGui/images/clientwindow/disconnected.png</normaloff>:/ClientWindowGui/images/clientwindow/connected.png</iconset>
+	</property>
+        <property name="whatsThis" stdset="0">
+          <string>Connect
+
+	  Connect with/Disconnect from selected Go server.</string>
+        </property>
+      </widget>
+      <widget class="QComboBox" name="cb_connect">
+        <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="toolTip" stdset="0">
+          <string>choose server</string>
+        </property>
+        <property name="whatsThis" stdset="0">
+          <string>chose Go server to connect to or use 'Preferences' to add/change a Go server entry</string>
+        </property>
+      </widget>
+      <widget class="QToolButton" name="toolSeek">
+        <property name="text">
+          <string/>
+        </property>
+        <property name="checkable">
+          <bool>true</bool>
+        </property>
+        <property name="toolTip" stdset="0">
+          <string>Seek game</string>
+        </property>
+	<property name="icon">
+	  <iconset resource="q4go.qrc">
+	  <normaloff>:/ClientWindowGui/images/clientwindow/not_seeking.png</normaloff>:/ClientWindowGui/images/clientwindow/seeking.png</iconset>
+	</property>
+        <property name="whatsThis" stdset="0">
+          <string>Seek game
+
+	  Use this button to 'seek' a game, with the given time settings (popup menu), and handicap range (list beside)
+	  The server will automatically launch a game against an opponent with matching settings.</string>
+        </property>
+      </widget>
+      <widget class="QComboBox" name="cb_seek_handicap">
+        <property name="toolTip" stdset="0">
+          <string>Set the handicap range you want for seeking games</string>
+        </property>
+        <property name="whatsThis" stdset="0">
+          <string>handicap range
+
+	  Set the handicap range you wish when seeking a game. See 'seek' button for more</string>
+        </property>
+        <item>
+          <property name="text">
+            <string>even</string>
+          </property>
+        </item>
+        <item>
+          <property name="text">
+            <string>within 2 stones</string>
+          </property>
+        </item>
+        <item>
+          <property name="text">
+            <string>within 5 stones</string>
+          </property>
+        </item>
+        <item>
+          <property name="text">
+            <string>anyone</string>
+          </property>
+        </item>
+        <item>
+          <property name="text">
+            <string>same or stronger</string>
+          </property>
+        </item>
+        <item>
+          <property name="text">
+            <string>same or weaker</string>
+          </property>
+        </item>
+      </widget>
+      <widget class="QToolButton" name="toolObserveMode">
+        <property name="text">
+          <string/>
+        </property>
+        <property name="checkable">
+          <bool>true</bool>
+        </property>
+        <property name="toolTip" stdset="0">
+          <string>Observe mode
+Choose between single window or multiple windows.</string>
+        </property>
+	<property name="icon">
+	  <iconset resource="q4go.qrc">
+	  <normaloff>:/ClientWindowGui/images/clientwindow/observe-multi.png</normaloff>
+	  <normalon>:/ClientWindowGui/images/clientwindow/observe-single.png</normalon>:/ClientWindowGui/images/clientwindow/observe-multi.png</iconset>
+	</property>
+        <property name="whatsThis" stdset="0">
+          <string>Observe mode
+
+Use this button to choose whether observed games will open in individual windows, or in a single
+window with a selection pane for choosing which game to observe.</string>
+        </property>
+      </widget>
+      <addaction name="separator"/>
+      <addaction name="setLookingMode"/>
+      <addaction name="setQuietMode"/>
+      <addaction name="setOpenMode"/>
+      <addaction name="separator"/>
+      <addaction name="refreshPlayers"/>
+      <addaction name="refreshGames"/>
+    </widget>
+    <widget class="QMenuBar" name="menuBar">
+      <property name="geometry">
+	<rect>
+	  <x>0</x>
+	  <y>0</y>
+	  <width>773</width>
+	  <height>23</height>
+	</rect>
+      </property>
+      <widget class="QMenu" name="fileMenu">
+	<property name="title">
+	  <string>&amp;File</string>
+	</property>
+	<addaction name="fileNewBoard"/>
+	<addaction name="fileNew"/>
+	<addaction name="fileNewVariant"/>
+	<addaction name="fileOpen"/>
+	<addaction name="fileOpenDB"/>
+	<addaction name="separator"/>
+	<addaction name="computerPlay"/>
+	<addaction name="twoEnginePlay"/>
+	<addaction name="fileBatchAnalysis"/>
+	<addaction name="separator"/>
+	<addaction name="fileQuit"/>
+      </widget>
+      <widget class="QMenu" name="PopupMenu">
+	<property name="title">
+	  <string>&amp;Connections</string>
+	</property>
+	<addaction name="Connect"/>
+	<addaction name="Disconnect"/>
+	<addaction name="separator"/>
+	<addaction name="editServers"/>
+      </widget>
+      <widget class="QMenu" name="PopupMenu_2">
+	<property name="title">
+	  <string>&amp;Settings</string>
+	</property>
+	<addaction name="setPreferences"/>
+	<addaction name="separator"/>
+	<addaction name="setLookingMode"/>
+	<addaction name="setOpenMode"/>
+	<addaction name="setQuietMode"/>
+      </widget>
+      <widget class="QMenu" name="PopupMenu_3">
+	<property name="title">
+	  <string>&amp;View</string>
+	</property>
+	<addaction name="viewToolBar"/>
+	<addaction name="viewMenuBar"/>
+	<addaction name="viewStatusBar"/>
+      </widget>
+      <widget class="QMenu" name="menu_Learn_Go">
+	<property name="title">
+	  <string>&amp;Learn Go</string>
+	</property>
+	<addaction name="actionTutorials"/>
+      </widget>
+      <widget class="QMenu" name="helpMenu">
+	<property name="title">
+	  <string>&amp;Help</string>
+	</property>
+	<addaction name="helpManual"/>
+	<addaction name="helpReadme"/>
+	<addaction name="separator"/>
+	<addaction name="helpAboutApp"/>
+	<addaction name="helpAboutQt"/>
+	<addaction name="helpNewVersion"/>
+      </widget>
+      <addaction name="fileMenu"/>
+      <addaction name="PopupMenu"/>
+      <addaction name="PopupMenu_2"/>
+      <addaction name="PopupMenu_3"/>
+      <addaction name="menu_Learn_Go"/>
+      <addaction name="helpMenu"/>
+    </widget>
+    <action name="fileOpen">
+      <property name="icon">
+	<iconset resource="q4go.qrc">
+	<normaloff>:/ClientWindowGui/images/clientwindow/fileopen.png</normaloff>:/ClientWindowGui/images/clientwindow/fileopen.png</iconset>
+      </property>
+      <property name="text">
+	<string>&amp;Open...</string>
+      </property>
+      <property name="iconText">
+	<string>Open</string>
+      </property>
+      <property name="whatsThis">
+	<string>Open
+
+	Open a sgf file.</string>
+      </property>
+      <property name="shortcut">
+	<string>Ctrl+O</string>
+      </property>
+      <property name="name" stdset="0">
+	<cstring>fileOpen</cstring>
+      </property>
+    </action>
+    <action name="helpManual">
+      <property name="text">
+	<string>&amp;Manual</string>
+      </property>
+      <property name="iconText">
+	<string>Manual</string>
+      </property>
+      <property name="toolTip">
+	<string>Opens the manual</string>
+      </property>
+      <property name="whatsThis">
+	<string>Help
+
+	Opens the manual of the application.</string>
+      </property>
+      <property name="shortcut">
+	<string>F1</string>
+      </property>
+      <property name="name" stdset="0">
+	<cstring>helpManual</cstring>
+      </property>
+    </action>
+    <action name="helpAboutApp">
+      <property name="text">
+	<string>&amp;About</string>
+      </property>
+      <property name="iconText">
+	<string>About</string>
+      </property>
+      <property name="toolTip">
+	<string>About the application.</string>
+      </property>
+      <property name="whatsThis">
+	<string>About
+
+	About the application.</string>
+      </property>
+      <property name="shortcut">
+	<string/>
+      </property>
+      <property name="name" stdset="0">
+	<cstring>helpAboutApp</cstring>
+      </property>
+      <property name="menuRole">
+       <enum>QAction::AboutRole</enum>
+      </property>
+    </action>
+    <action name="Disconnect">
+      <property name="checkable">
+	<bool>false</bool>
+      </property>
+      <property name="checked">
+	<bool>false</bool>
+      </property>
+      <property name="enabled">
+	<bool>true</bool>
+      </property>
+      <property name="text">
+	<string>&amp;Disconnect</string>
+      </property>
+      <property name="iconText">
+	<string>Disconnect</string>
+      </property>
+      <property name="toolTip">
+	<string>Disconnect from server</string>
+      </property>
+      <property name="whatsThis">
+	<string>Disconnect from server</string>
+      </property>
+      <property name="name" stdset="0">
+	<cstring>Disconnect</cstring>
+      </property>
+    </action>
+    <action name="setLookingMode">
+      <property name="checkable">
+	<bool>true</bool>
+      </property>
+      <property name="icon">
+	<iconset resource="q4go.qrc">
+	  <normaloff>:/ClientWindowGui/images/clientwindow/not_looking.png</normaloff>
+	<normalon>:/ClientWindowGui/images/clientwindow/looking.png</normalon>:/ClientWindowGui/images/clientwindow/not_looking.png</iconset>
+      </property>
+      <property name="text">
+	<string>&amp;Looking</string>
+      </property>
+      <property name="iconText">
+	<string>Looking</string>
+      </property>
+      <property name="toolTip">
+	<string>toggles looking for matches</string>
+      </property>
+      <property name="whatsThis">
+	<string>If checked then you are looking for matches, that means you are ready to play. After refreshing the player table having a '!' mark indicates to be looking for matches. Clicking this checkbox toggles the mode. You have to be open too, if you are looking. Thus, the Go server sets you open for matches (no 'X')!</string>
+      </property>
+      <property name="name" stdset="0">
+	<cstring>setLookingMode</cstring>
+      </property>
+    </action>
+    <action name="setOpenMode">
+      <property name="checkable">
+	<bool>true</bool>
+      </property>
+      <property name="icon">
+	<iconset resource="q4go.qrc">
+	  <normaloff>:/ClientWindowGui/images/clientwindow/not_open.png</normaloff>
+	<normalon>:/ClientWindowGui/images/clientwindow/open.png</normalon>:/ClientWindowGui/images/clientwindow/not_open.png</iconset>
+      </property>
+      <property name="text">
+	<string>&amp;Open</string>
+      </property>
+      <property name="iconText">
+	<string>Open</string>
+      </property>
+      <property name="toolTip">
+	<string>toggles open for matches</string>
+      </property>
+      <property name="whatsThis">
+	<string>If checked you are open for matches. After refreshing the player table having a 'X' mark indicates to be NOT open for matches. Clicking this checkbox toggles the mode.</string>
+      </property>
+      <property name="name" stdset="0">
+	<cstring>setOpenMode</cstring>
+      </property>
+    </action>
+    <action name="computerPlay">
+      <property name="icon">
+	<iconset resource="q4go.qrc">
+	<normaloff>:/ClientWindowGui/images/clientwindow/computerplay.png</normaloff>:/ClientWindowGui/images/clientwindow/computerplay.png</iconset>
+      </property>
+      <property name="text">
+	<string>&amp;Play with program</string>
+      </property>
+      <property name="iconText">
+	<string>Play with program</string>
+      </property>
+      <property name="statusTip">
+	<string>Play with program</string>
+      </property>
+      <property name="whatsThis">
+	<string>Play with a program
+
+	Sets a playing session with a pGo program using GTP (like GNUGO)</string>
+      </property>
+      <property name="shortcut">
+	<string>Ctrl+P</string>
+      </property>
+      <property name="name" stdset="0">
+	<cstring>computerPlay</cstring>
+      </property>
+    </action>
+    <action name="twoEnginePlay">
+      <property name="text">
+	<string>&amp;Computer vs. computer play</string>
+      </property>
+      <property name="iconText">
+	<string>Automatic computer vs. computer play</string>
+      </property>
+      <property name="statusTip">
+	<string>Select two engines and let them play one or more games</string>
+      </property>
+      <property name="whatsThis">
+	<string>Brings up a dialog to set up play between two engines.
+
+	You can set up one game or a multi-game match, optionally starting from
+	a single position, or from multiple positions found in a loaded game file.</string>
+      </property>
+      <property name="shortcut">
+	<string>Ctrl+T</string>
+      </property>
+      <property name="name" stdset="0">
+	<cstring>twoEnginePlay</cstring>
+      </property>
+    </action>
+    <action name="refreshPlayers">
+      <property name="icon">
+	<iconset resource="q4go.qrc">
+	<normaloff>:/ClientWindowGui/images/clientwindow/refresh_players.png</normaloff>:/ClientWindowGui/images/clientwindow/refresh_players.png</iconset>
+      </property>
+      <property name="text">
+	<string>Refresh players</string>
+      </property>
+      <property name="iconText">
+	<string>Refresh players</string>
+      </property>
+      <property name="toolTip">
+	<string>Get new players table from server</string>
+      </property>
+      <property name="whatsThis">
+	<string>Get new players table from server</string>
+      </property>
+      <property name="name" stdset="0">
+	<cstring>refreshPlayers</cstring>
+      </property>
+    </action>
+    <action name="refreshGames">
+      <property name="icon">
+	<iconset resource="q4go.qrc">
+	<normaloff>:/ClientWindowGui/images/clientwindow/refresh_games.png</normaloff>:/ClientWindowGui/images/clientwindow/refresh_games.png</iconset>
+      </property>
+      <property name="text">
+	<string>Refresh Games</string>
+      </property>
+      <property name="iconText">
+	<string>Refresh Games</string>
+      </property>
+      <property name="toolTip">
+	<string>Get new games table from server</string>
+      </property>
+      <property name="whatsThis">
+	<string>Get new games table from server</string>
+      </property>
+      <property name="name" stdset="0">
+	<cstring>refreshGames</cstring>
+      </property>
+    </action>
+    <action name="setQuietMode">
+      <property name="checkable">
+	<bool>true</bool>
+      </property>
+      <property name="icon">
+	<iconset resource="q4go.qrc">
+	  <normaloff>:/ClientWindowGui/images/clientwindow/not_quiet.png</normaloff>
+	<normalon>:/ClientWindowGui/images/clientwindow/quiet.png</normalon>:/ClientWindowGui/images/clientwindow/not_quiet.png</iconset>
+      </property>
+      <property name="text">
+	<string>&amp;Quiet</string>
+      </property>
+      <property name="iconText">
+	<string>Quiet</string>
+      </property>
+      <property name="toolTip">
+	<string>toggles system messages</string>
+      </property>
+      <property name="whatsThis">
+	<string>If checked then you don't receive system messages, that means you are not informed about connecting/disconnecting players, started/finished games etc. Clicking this checkbox toggles the mode. To be quiet is indicated with a 'Q' in the playertable.
+
+	Note : some features cannot work if set to quiet (checked box):
+	- sound when watched players enter/leave
+	- update of player/gamestable</string>
+      </property>
+      <property name="name" stdset="0">
+	<cstring>setQuietMode</cstring>
+      </property>
+    </action>
+    <action name="Connect">
+      <property name="checkable">
+	<bool>false</bool>
+      </property>
+      <property name="checked">
+	<bool>false</bool>
+      </property>
+      <property name="enabled">
+	<bool>true</bool>
+      </property>
+      <property name="text">
+	<string>&amp;Connect</string>
+      </property>
+      <property name="iconText">
+	<string>Connect</string>
+      </property>
+      <property name="toolTip">
+	<string>Connects to the server</string>
+      </property>
+      <property name="statusTip">
+	<string>Connects to the server</string>
+      </property>
+      <property name="whatsThis">
+	<string>Connects to the server</string>
+      </property>
+      <property name="name" stdset="0">
+	<cstring>Connect</cstring>
+      </property>
+    </action>
+    <action name="setPreferences">
+      <property name="icon">
+	<iconset resource="q4go.qrc">
+	<normaloff>:/ClientWindowGui/images/clientwindow/prefs.png</normaloff>:/ClientWindowGui/images/clientwindow/prefs.png</iconset>
+      </property>
+      <property name="text">
+	<string>Preferences</string>
+      </property>
+      <property name="iconText">
+	<string>Preferences</string>
+      </property>
+      <property name="toolTip">
+	<string>Edit the preferences</string>
+      </property>
+      <property name="whatsThis">
+	<string>Preferences
+
+	Edit the applications preferences.</string>
+      </property>
+      <property name="shortcut">
+	<string>Alt+P</string>
+      </property>
+      <property name="name" stdset="0">
+	<cstring>setPreferences</cstring>
+      </property>
+      <property name="menuRole">
+       <enum>QAction::PreferencesRole</enum>
+      </property>
+    </action>
+    <action name="fileQuit">
+      <property name="icon">
+	<iconset resource="q4go.qrc">
+	<normaloff>:/ClientWindowGui/images/clientwindow/fileexit.png</normaloff>:/ClientWindowGui/images/clientwindow/fileexit.png</iconset>
+      </property>
+      <property name="text">
+	<string>E&amp;xit</string>
+      </property>
+      <property name="iconText">
+	<string>Exit</string>
+      </property>
+      <property name="toolTip">
+	<string>Quits the application</string>
+      </property>
+      <property name="whatsThis">
+	<string>Exit
+
+	Quits the application.</string>
+      </property>
+      <property name="shortcut">
+	<string>Ctrl+Q</string>
+      </property>
+      <property name="name" stdset="0">
+	<cstring>fileQuit</cstring>
+      </property>
+      <property name="menuRole">
+       <enum>QAction::QuitRole</enum>
+      </property>
+    </action>
+    <action name="fileNewBoard">
+      <property name="icon">
+	<iconset resource="q4go.qrc">
+	<normaloff>:/ClientWindowGui/images/clientwindow/new_board.png</normaloff>:/ClientWindowGui/images/clientwindow/new_board.png</iconset>
+      </property>
+      <property name="text">
+	<string>New &amp;Board 19x19</string>
+      </property>
+      <property name="iconText">
+	<string>New Board 19x19</string>
+      </property>
+      <property name="toolTip">
+	<string>Creates a new board with size 19x19</string>
+      </property>
+      <property name="whatsThis">
+	<string>New
+
+	Creates a new 19x19 board.</string>
+      </property>
+      <property name="shortcut">
+	<string>Ctrl+B</string>
+      </property>
+      <property name="name" stdset="0">
+	<cstring>fileNewBoard</cstring>
+      </property>
+    </action>
+    <action name="viewToolBar">
+      <property name="checkable">
+	<bool>true</bool>
+      </property>
+      <property name="checked">
+	<bool>true</bool>
+      </property>
+      <property name="text">
+	<string>&amp;ToolBar</string>
+      </property>
+      <property name="iconText">
+	<string>ToolBar</string>
+      </property>
+      <property name="toolTip">
+	<string>Enables/disables the toolbar</string>
+      </property>
+      <property name="whatsThis">
+	<string>Navigation toolbar
+
+	Enables/disables the toolbar.</string>
+      </property>
+      <property name="name" stdset="0">
+	<cstring>viewToolBar</cstring>
+      </property>
+    </action>
+    <action name="editServers">
+      <property name="text">
+	<string>&amp;Edit servers</string>
+      </property>
+      <property name="iconText">
+	<string>Edit servers</string>
+      </property>
+      <property name="whatsThis">
+	<string>Edit servers</string>
+      </property>
+      <property name="name" stdset="0">
+	<cstring>editServers</cstring>
+      </property>
+    </action>
+    <action name="viewMenuBar">
+      <property name="checkable">
+	<bool>true</bool>
+      </property>
+      <property name="checked">
+	<bool>true</bool>
+      </property>
+      <property name="text">
+	<string>&amp;Menubar</string>
+      </property>
+      <property name="iconText">
+	<string>Menubar</string>
+      </property>
+      <property name="toolTip">
+	<string>Enables/disables the menubar</string>
+      </property>
+      <property name="shortcut">
+	<string>F7</string>
+      </property>
+      <property name="name" stdset="0">
+	<cstring>viewMenuBar</cstring>
+      </property>
+    </action>
+    <action name="viewStatusBar">
+      <property name="checkable">
+	<bool>true</bool>
+      </property>
+      <property name="checked">
+	<bool>true</bool>
+      </property>
+      <property name="text">
+	<string>&amp;Statusbar</string>
+      </property>
+      <property name="iconText">
+	<string>Statusbar</string>
+      </property>
+      <property name="toolTip">
+	<string>Enables/disables the statusbar</string>
+      </property>
+      <property name="whatsThis">
+	<string>Statusbar
+
+	Enables/disables the statusbar.</string>
+      </property>
+      <property name="name" stdset="0">
+	<cstring>viewStatusBar</cstring>
+      </property>
+    </action>
+    <action name="helpAboutQt">
+      <property name="text">
+	<string>About &amp;Qt</string>
+      </property>
+      <property name="iconText">
+	<string>About Qt</string>
+      </property>
+      <property name="whatsThis">
+	<string>About Qt
+
+	About Qt.</string>
+      </property>
+      <property name="name" stdset="0">
+	<cstring>helpAboutQt</cstring>
+      </property>
+      <property name="menuRole">
+       <enum>QAction::AboutQtRole</enum>
+      </property>
+    </action>
+    <action name="fileNew">
+      <property name="icon">
+	<iconset resource="q4go.qrc">
+	<normaloff>:/ClientWindowGui/images/clientwindow/filenew.png</normaloff>:/ClientWindowGui/images/clientwindow/filenew.png</iconset>
+      </property>
+      <property name="text">
+	<string>&amp;New Board</string>
+      </property>
+      <property name="iconText">
+	<string>New Board</string>
+      </property>
+      <property name="whatsThis">
+	<string>Creates a new board</string>
+      </property>
+      <property name="shortcut">
+	<string>Ctrl+N</string>
+      </property>
+      <property name="name" stdset="0">
+	<cstring>fileNew</cstring>
+      </property>
+    </action>
+    <action name="fileNewVariant">
+      <property name="icon">
+	<iconset resource="q4go.qrc">
+	<normaloff>:/ClientWindowGui/images/clientwindow/torus.png</normaloff>:/ClientWindowGui/images/clientwindow/torus.png</iconset>
+      </property>
+      <property name="text">
+	<string>New &amp;Variant Board</string>
+      </property>
+      <property name="iconText">
+	<string>New Board</string>
+      </property>
+      <property name="toolTip">
+	<string>New Variant Board</string>
+      </property>
+      <property name="whatsThis">
+	<string>Creates a new board</string>
+      </property>
+      <property name="shortcut">
+	<string>Ctrl+V</string>
+      </property>
+      <property name="name" stdset="0">
+	<cstring>fileNew</cstring>
+      </property>
+    </action>
+    <action name="Seek">
+      <property name="checkable">
+	<bool>true</bool>
+      </property>
+      <property name="text">
+	<string>Action</string>
+      </property>
+      <property name="iconText">
+	<string>Action</string>
+      </property>
+      <property name="toolTip">
+	<string>Seek game</string>
+      </property>
+      <property name="whatsThis">
+	<string>Seek game
+
+	Use this button to 'seek' a game, with the given time settings (popup menu), and handicap range (list beside)
+	The server will automatically launch a game against an opponent with matching settings.</string>
+      </property>
+      <property name="name" stdset="0">
+	<cstring>Seek</cstring>
+      </property>
+    </action>
+    <action name="helpNewVersion">
+      <property name="iconText">
+	<string>New version message</string>
+      </property>
+      <property name="toolTip">
+	<string>shows new version message</string>
+      </property>
+      <property name="whatsThis">
+	<string>new version message
+
+	displays the message box that appears at launch of a new version</string>
+      </property>
+      <property name="name" stdset="0">
+	<cstring>helpNewVersion</cstring>
+      </property>
+    </action>
+    <action name="helpReadme">
+      <property name="text">
+	<string>View &amp;README</string>
+      </property>
+    </action>
+    <action name="fileBatchAnalysis">
+      <property name="icon">
+	<iconset resource="q4go.qrc">
+	<normaloff>:/ClientWindowGui/images/clientwindow/gear.png</normaloff>:/ClientWindowGui/images/clientwindow/gear.png</iconset>
+      </property>
+      <property name="text">
+	<string>Batch analysis...</string>
+      </property>
+      <property name="toolTip">
+	<string>Batch analysis
+	Open the batch analysis dialog which allows you to add SGF files to a queue to be analysed by an engine.
+	</string>
+      </property>
+    </action>
+    <action name="fileOpenDB">
+      <property name="text">
+	<string>Open from &amp;database...</string>
+      </property>
+    </action>
+    <action name="actionTutorials">
+      <property name="text">
+	<string>&amp;Tutorials...</string>
+      </property>
+      <property name="toolTip">
+	<string>Show the beginner tutorials dialog.</string>
+      </property>
+    </action>
+  </widget>
+  <layoutdefault spacing="6" margin="11"/>
+  <customwidgets>
+    <customwidget>
+      <class>GamesTable</class>
+      <extends>QWidget</extends>
+      <header location="global">gamestable.h</header>
+    </customwidget>
+    <customwidget>
+      <class>PlayerTable</class>
+      <extends>QWidget</extends>
+      <header location="global">playertable.h</header>
+    </customwidget>
+  </customwidgets>
+  <includes>
+    <include location="local">playertable.h</include>
+    <include location="local">gamestable.h</include>
+  </includes>
+  <resources>
+    <include location="q4go.qrc"/>
+  </resources>
+  <connections>
+    <connection>
+      <sender>setQuietMode</sender>
+      <signal>triggered(bool)</signal>
+      <receiver>ClientWindowGui</receiver>
+      <slot>slot_cbquiet(bool)</slot>
+      <hints>
+	<hint type="sourcelabel">
+	  <x>-1</x>
+	  <y>-1</y>
+	</hint>
+	<hint type="destinationlabel">
+	  <x>20</x>
+	  <y>20</y>
+	</hint>
+      </hints>
+    </connection>
+    <connection>
+      <sender>setOpenMode</sender>
+      <signal>triggered(bool)</signal>
+      <receiver>ClientWindowGui</receiver>
+      <slot>slot_cbopen(bool)</slot>
+      <hints>
+	<hint type="sourcelabel">
+	  <x>-1</x>
+	  <y>-1</y>
+	</hint>
+	<hint type="destinationlabel">
+	  <x>20</x>
+	  <y>20</y>
+	</hint>
+      </hints>
+    </connection>
+    <connection>
+      <sender>setLookingMode</sender>
+      <signal>triggered(bool)</signal>
+      <receiver>ClientWindowGui</receiver>
+      <slot>slot_cblooking(bool)</slot>
+      <hints>
+	<hint type="sourcelabel">
+	  <x>-1</x>
+	  <y>-1</y>
+	</hint>
+	<hint type="destinationlabel">
+	  <x>20</x>
+	  <y>20</y>
+	</hint>
+      </hints>
+    </connection>
+    <connection>
+      <sender>refreshGames</sender>
+      <signal>triggered(bool)</signal>
+      <receiver>ClientWindowGui</receiver>
+      <slot>slot_pbrefreshgames(bool)</slot>
+      <hints>
+	<hint type="sourcelabel">
+	  <x>-1</x>
+	  <y>-1</y>
+	</hint>
+	<hint type="destinationlabel">
+	  <x>20</x>
+	  <y>20</y>
+	</hint>
+      </hints>
+    </connection>
+    <connection>
+      <sender>refreshPlayers</sender>
+      <signal>triggered(bool)</signal>
+      <receiver>ClientWindowGui</receiver>
+      <slot>slot_pbrefreshplayers(bool)</slot>
+      <hints>
+	<hint type="sourcelabel">
+	  <x>-1</x>
+	  <y>-1</y>
+	</hint>
+	<hint type="destinationlabel">
+	  <x>20</x>
+	  <y>20</y>
+	</hint>
+      </hints>
+    </connection>
+    <connection>
+      <sender>pb_releaseTalkTabs</sender>
+      <signal>clicked()</signal>
+      <receiver>ClientWindowGui</receiver>
+      <slot>slot_pbRelTabs()</slot>
+      <hints>
+	<hint type="sourcelabel">
+	  <x>20</x>
+	  <y>20</y>
+	</hint>
+	<hint type="destinationlabel">
+	  <x>20</x>
+	  <y>20</y>
+	</hint>
+      </hints>
+    </connection>
+    <connection>
+      <sender>RoomList</sender>
+      <signal>itemDoubleClicked(QListWidgetItem*)</signal>
+      <receiver>ClientWindowGui</receiver>
+      <slot>slot_RoomListClicked(QListWidgetItem*)</slot>
+      <hints>
+	<hint type="sourcelabel">
+	  <x>20</x>
+	  <y>20</y>
+	</hint>
+	<hint type="destinationlabel">
+	  <x>20</x>
+	  <y>20</y>
+	</hint>
+      </hints>
+    </connection>
+    <connection>
+      <sender>LeaveRoomButton</sender>
+      <signal>clicked()</signal>
+      <receiver>ClientWindowGui</receiver>
+      <slot>slot_leaveRoom()</slot>
+      <hints>
+	<hint type="sourcelabel">
+	  <x>20</x>
+	  <y>20</y>
+	</hint>
+	<hint type="destinationlabel">
+	  <x>20</x>
+	  <y>20</y>
+	</hint>
+      </hints>
+    </connection>
+    <connection>
+      <sender>cb_connect</sender>
+      <signal>activated(QString)</signal>
+      <receiver>ClientWindowGui</receiver>
+      <slot>slot_cbconnect(QString)</slot>
+    </connection>
+    <connection>
+      <sender>toolConnect</sender>
+      <signal>toggled(bool)</signal>
+      <receiver>ClientWindowGui</receiver>
+      <slot>slot_connect(bool)</slot>
+    </connection>
+    <connection>
+      <sender>toolSeek</sender>
+      <signal>toggled(bool)</signal>
+      <receiver>ClientWindowGui</receiver>
+      <slot>slot_seek(bool)</slot>
+    </connection>
+  </connections>
+</ui>

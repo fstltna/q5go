@@ -1,0 +1,403 @@
+q5Go 2.1
+
+These are the major user-visible changes in 2.1:
+ * A number of crashes in odd situations were fixed (such as analyzing
+   games with komi values like 650, or handling invalid server messages).
+ * It is now possible to copy/paste positions in Edit mode.
+ * The batch analysis dialog has a new button to enqueue an entire
+   directory of SGF files.
+ * Engine games now allow board sizes up to 52.
+
+Version 2.1.1 to 2.1.3 are minor updates, which:
+ - fix two engine play to accept board sizes up to 52
+ - fix a problem with SGF saving in locales that use commas instead of
+   decimal points
+ - add support for the Katago rulesets feature
+ - add an autoplay feature for viewing game records
+
+q5Go 2.0
+
+These are the major user-visible changes in 2.0:
+ * Pattern search is now available, similar to Kombilo.  Use the settings
+   dialog to create a suitable database.
+   Unfortunately existing Kombilo databases can't be used for this because
+   of 32/64 bit compatibility issues.
+ * Database load times are reduced, and threading was added so that
+   the user interface remains responsive.
+ * Multiple online games can now be observed in a single window with
+   clickable previews to switch between them.  The old mode of one game
+   per window is still available.
+ * There is a new "Tip of the day" dialog on startup, which displays
+   features that are maybe not easily discoverable.  It can be disabled.
+ * There are several new high resolution wood textures for the board
+   to choose from.
+ * When playing engines that are capable of analysis, the evaluation is
+   now collected during the game and can be displayed live.
+ * Engine configuration now allows engines to be unrestricted in
+   board size and komi, catching up with improvements in KataGo over
+   Leela Zero.
+ * Some GTP bugs were fixed, which may improve compatibility with
+   certain engines.
+ * Window titles can now be overriden in the settings, which should help
+   with streaming setups.
+ * Performance improvements for the screen updates should now make it
+   feasible to turn off quiet mode when online, which allows the server
+   to send live player and game updates.
+ * There is a new option to highlight the user's own chat messages in
+   a different color.
+
+q5Go 1.1
+
+These are the major user-visible changes in 1.1:
+ * Performance improvements when loading and editing very large SGF files.
+ * q5go can now detect when an observed game on IGS is adjourned and restarted
+   and follow it in the same window. This requires the server to be set to
+   non-quiet mode.
+ * When playing an engine, there is now a "Play again" button.
+ * In an online match with Canadian time, time warnings can now be enabled
+   for remaining average time, not just remaining total time.
+ * In an online match, remaining seconds in low time situations can now be
+   shown on the opponent's last placed stone.
+ * Added a "Go terminology" SGF to the tutorials.
+ * The greeter window now has a hint to choose "Play online" for a full set
+   of menus.
+ * The program is more helpful when detecting a broken SGF written by Jago.
+ * Added more helpful error messages when editing servers in the preferences.
+ * Score evaluations are now shown in the board window when analysis is on.
+ * Added a feature to visualize connected stones by drawing thick lines
+   between them. May be helpful for beginners.
+ * GTP support was extended to support board sizes > 25, for KataGo.
+
+q5Go 1.0
+
+These are the major user-visible changes in 1.0:
+ * A greeter dialog was added, similar to the ones used by cgoban or
+   gGo.
+ * There is now a "Learn Go" button that brings up beginner tutorials
+   in a slideshow view.
+ * Engine configuration in the preferences is a little more friendly.
+ * Edit mode works differently. Depending on the situation, an edited
+   position can be appended to or inserted before the current node, or
+   replace a previous edit.
+ * The board window now has menu items for undo/redo.
+ * When playing on IGS, the comments box now allows chatting even after
+   a match has completed, making it unnecessary to find the opponent's
+   talk tab.
+ * Corrected a bug when parsing nmatch preferences on IGS.
+
+q5Go 0.9
+
+These are the major user-visible changes in 0.9:
+ * Support for KataGo analysis.  The evaluation graph can be switched between
+   score and win rate.
+ * A new option to start a game against an engine game from the current
+   board position.
+ * A new AI vs AI play mode.  The number of games to be played is
+   configurable, and an opening book can be used.
+ * It is now possible to hide/show the analysis markup of the board rather
+   than having it displayed at all times.
+ * The variant game dialog now supports removing intersections from the board,
+   allowing new variations of the game.
+ * Several bug fixes related to scoring mode when playing games on IGS.
+ * There are now a few presets for the stone visual appearance to make it
+   quicker and easier to arrive at a nice look.  The darkness of the shadows
+   can now also be configured.
+ * Sounds should be a little more reliable, the samples used for stones were
+   too short to be played on some systems.
+
+q5Go 0.8.1
+ * Adjusted analysis mode to work with the upcoming Leela Zero 0.17.
+
+q5Go 0.8
+
+These are the major user-visible changes in 0.8:
+ * Analyzing games with multiple engines now produces sensible results.
+   q5go remembers winrates for each engine name and komi combination and
+   displays multiple winrate graphs.
+ * For engines with fixed komi, batch analysis can now flip the position
+   to effectively analyze with reverse komi.
+ * For live analysis, it is now possible to choose the analysis engine.
+ * There is a new slide export feature which combines the board and
+   comments into a single image for use in slide shows or videos.
+   File name sequences can be generated automatically.
+ * It is now possible to choose between area and territory scoring in
+   off-line games.
+
+Minor fixes and improvements include:
+ * The board coordinates now scale with the size of the display, their
+   size relative to the stones is configurable in the preferences.
+ * It is now possible to choose whether to tile or scale the wood
+   background image used for the board.
+ * The evaluation graph is automatically displayed when a game obtains
+   an evaluation for the first time.
+ * In online match games, remaining time is now saved to the SGF for both
+   player and opponent.
+ * It is now possible to hold down LMB and drag in the evaluation graph
+   to move to a different position.
+ * In the database dialog, "Open" and "Cancel" now work (previously
+   only double clicks opened the game).
+ * In off-line mode, scoring a scored position again now keeps liveness
+   and seki status.
+ * A bug was fixed that caused the "Update" button to disappear when
+   scoring or editing an off-line copy of an observed game.
+ * Loading an SGF file for a game against an engine is now implemented.
+
+q5Go 0.7
+
+These are major user-visible changes in 0.7:
+ * Old SGFs and a few new ones use a move at 20:20 to signal pass which
+   caused problems when loading such SGFs.
+ * q5go can now read kombilo databases.  There is a new file open dialog
+   to select a game from the database; it has preview functionality to
+   display game information and allow browsing through the game moves.
+ * Visibility of menu, status bar, side bar and slider in the board
+   window are now saved as part of the layout.  Whatever preferences
+   option there were have been removed, except for the one to choose
+   whether to place the side bar to the left or the right.
+
+q5Go 0.6
+
+Version 0.6 adds no major new features, but adds a number of smaller fixes
+and refinements:
+ * Better support for various character sets
+ * Better support for various broken SGF files that occur in the wild
+ * An "auto-collapse" mode for the game tree, which shows only the
+   current variation and the ones following it and collapses everything
+   else
+ * A tooltip preview for the game tree
+ * A file open dialog with an SGF preview
+ * An improved version of the batch analysis dialog, with a list view
+   for finished jobs and an engine selector
+ * Better stone sounds
+ * An "automatic diagrams" dialog which can create figures and diagrams
+   for an entire file
+ * Image export functionality for the evaluation graph
+ * Better game tree headers on Windows, working around a Qt problem
+ * An updated Chinese translation
+
+q5Go 0.5
+
+Version 0.5 adds the following features:
+ * Support for diagrams.  These can be used to either subdivide a game into
+   printable diagrams, or to provide a variation display when browsing a
+   file in the editor.  The latter case is used by the engine analysis
+   mode.
+ * A new batch review mode, where the user can choose files to be reviewed
+   and hand them off to an engine.  The files can be viewed while the
+   analysis is in progress, and there is a winrate graph.
+ * A redesigned layout for the user interface.  The various elements of
+   the board window (comments, diagram display, game tree, evaluation
+   graph and observer list) now exist in docks and can be freely moved
+   around.  It is possible to save and restore these layouts.
+ * Most icons have been replaced with larger ones, and q5go now uses a
+   Qt feature for better results on high-DPI displays.  This is untested,
+   I would appreciate feedback as to how well it works on such devices.
+ * The command line options have changed.  They are now processed by
+   standard library functions and follow normal conventions as a result.
+
+q5Go 0.4
+
+Version 0.4 adds the following features:
+ * Support for rectangular boards
+ * Support for toroidal boards (with an extended view option and
+   scrolling)
+ * On-line observer lists, which were dropped in the initial versions
+   of q5go, are functioning again
+ * Likewise for move time annotations
+
+q5Go 0.3
+
+Version 0.3 adds two major new features:
+ * Analysis with Leela Zero or compatible programs
+ * A game tree display
+
+Minor changes and fixes include:
+ * Some visual improvements for the user interface
+ * Time warnings for online play are working again
+ * When loading SGF files, unrecognized properties are now
+   remembered and saved as per the specification
+
+q5Go 0.2
+
+Version 0.2 is mostly a maintenance release which fixes some issues in 0.1.
+ * Fixed a rare crash that occurred when observing an IGS game just as it
+   ended.
+ * Fixed GTP support to also work on Windows - there were some portability
+   issues with the underlying Qt toolkit.
+ * Added support for configuring multiple GTP engines like GnuGo or Leela.
+ * Allow loading certain types of invalid SGF files that occur in the wild.
+
+q5Go 0.1
+
+Ported to Qt5 and replaced a lot of the old qGo code which was in fairly
+poor shape.
+
+There are some changes in the feature list in this version:
+ * Added a GTP implementation that works with Leela Zero.  GTP support
+   was also improved to be more asynchronous, so as to not lock up the GUI
+   while waiting for the engine.
+   This is also still slightly experimental.
+ * Edit mode behaves differently.  There is now a toolbar to place
+   marks at all times. and a button to change the player to move.
+   Edit mode is available through a toggle button rather than as a side
+   tab, and is only used for adding/removing stones.  New board positions
+   are added as a child when leaving edit mode.
+ * Some less useful features have been removed when it was easier than
+   porting them Qt5 and the replaced foundation.  This includes the user
+   toolbar, cutting and pasting variations, "mouse gestures" and
+   configurable background colors.
+ * Import and export have changed somewhat.  It is now possible to select
+   a rectangular sub-area for ASCII and picture export.
+   ASCII export now generates diagrams usable in the lifein19x19 forums
+   and Sensei's library, including move numbers, with the option of creating
+   multiple diagrams for a sequence of moves automatically.  As a
+   consequence, the character set used for ASCII display is no longer
+   configurable.  ASCII import was removed on the grounds of not
+   being very useful.
+ * There is a new SVG export to create a vector graphics representation of
+   the board.  This also supports exporting subparts of the board.
+ * The functionality for saving window sizes was simplified to just always
+   save comment orientation.  Size and layout are now remembered separately
+   for every encountered screen dimension.
+   The functionality to save up to 10 different board sizes with
+   keyboard shortcuts was removed.
+ * Variation display was improved and the user can chooser between letters
+   and ghost stones, as well as choosing whether to use the setting found
+   in SGF files or ignore it.
+
+This update was done by Bernd Schmidt <bernds_cb1@t-online.de>.
+
+q4Go 0.2
+
+This is a port of the last qGo (1.5.2) sources from CVS to Qt4. It should be
+considered beta quality. The motivation is simply a personal feeling that
+the new GUI in qGo2 is a step backwards, and Qt3 is getting increasingly less
+supported.
+
+This port was done by Bernd Schmidt <bernds_cb1@t-online.de>.
+
+Below is the old README:
+
+qGo 1.5.2
+---------
+
+Startup options:
+
+qGo [options] [<file>]
+
+-sgf		make new sgf file (or simple open a board to play)
+-sgf19		same but don't ask and open 19x19 board
+-debug		open debug window and show status messages
+-desktop	use standard options from desktop
+<file>		open file (type sgf, mgt or xml)
+
+
+qGo is a Go board, SGF editor and client for IGS/NNGS or similar servers.
+Go is an ancient boardgame, very common in Japan, China and Korea.
+
+Open index.html for installation support.
+
+support table:
+
+windows:	Qt 3.2.1nc
+Linux:		Qt 3.1 and above
+Mac OsX:	Qt 3.1 and above
+
+Version 0.1 should be stable including a lot of bugfixes concerning
+the go server behavioural.
+
+Version 0.0.14 has many bugfixes and new stones + board coded by
+Marin Ferecatu. That's why I dropped the old stones. Further, fonts
+and background colors are free selectable.
+The autoplay feature can now use sgf time information, thus you can
+replay a game in original speed.
+
+Version 0.0.13 offers some teaching tools whereby the teacher starts
+a teaching session and his client works as server for the invited
+student. The student (if one) is able to play one or both colors, but,
+the teacher can always play both colors. Hope this helps for online
+teaching.
+There's are a watch list and an exclude list too, whereby
+entering/leaving of players can be watched as well as players can be
+excluded from shouting. I removed the thousands of talk windows and
+added a talk tab inside the client window.
+The translations have been
+enabled again in Version 0.0.13, but, since Peter and me speak only German
+and Enlish, there are only these two translations fixed. Thanks to
+Emmanuel Beranger for the French translation.
+Look at changelog for more details to this version.
+
+Since Version 0.0.12 qGo has it's own client.
+
+qGo is no longer supported by Qt 2.3nc.
+
+----
+
+Version 0.0.7 comes with support for translations. Currently there are
+english, french and german versions available.
+You can chose the language in the preferences dialog. If system default
+is selected, the Unix system locale will be used (LANG environment variable).
+Somehow I thought on Windows it would also chose the default language, but
+this does not work. The locale on my german windows 2000 is "C" - anything
+but the "de" or "de_DE" what Qt expects. Well, Windows.... I don't really
+care. Set the language manually and you are fine.
+You have to restart qGo to let the language change take effect.
+Please contact me if you want to translate qGo to your language. I will put
+more detailed informations on the qGo webpage at http://qgo.sourceforge.net
+
+I added a patch from Bernd Schmidt fixing a really nasty SGF parser bug.
+Thanks, Bernd!
+
+Version 0.0.6 is mainly a maintaining release with bugfixes and minor
+feature enhancements.
+Translation files (requested by some users) are not yet in. I plan to
+release a version for translations soon.
+
+In version 0.0.5 a SDI interface for multiple boards in one running
+process is implemented. It is not using threads, so if you load a
+large file like Kogos, it will hang up the program while
+loading. Maybe I add thread support, not sure yet. You can always
+start several processes, that might be safer than threads.
+
+Support for Kanji letters is implemented in 0.0.5. You can now load
+and save games with a text encoding, set in the preferences dialog in
+the third tab 'SGF Loading'. You have to select the encoding before
+loading a file. You might need to try a bit which encoding fits your
+language best. It was tested on japanese (windows and linux), chinese
+(linux) and korean (windows) systems and worked.
+
+0.0.4 comes with a basic implementation of XML support.
+Currently only reading XML files is done, saving not yet.
+Reading XML works with files saved from Jago, but not yet all XML
+are loaded properly. Please consider this currently as a draft, XML
+code is under development still.
+
+qGo now supports old SGF and MGT files that can sometimes be found
+on the web. If it's an old format, it's automatically noticed and qGo
+converts the file upon loading into new SGF format.
+I found some of those files at the download section of the german
+go association.
+
+
+Copyright
+---------
+
+Copyright (C) 2001-2006 Emmanuel Beranger, Johannes Mesa, Peter Strempel
+
+This software is published under the GNU General Public License (GPL).
+See the file COPYING for more informations or visit http://www.fsf.org/.
+
+The Windows version is linked against the Qt non-commercial edition
+and also published under the GPL with the following exception applying
+to the Windows version of qGo:
+
+  As a special exception, the author gives permission to link this program
+  with Qt non-commercial edition, and distribute the resulting executable,
+  without including the source code for the Qt non-commercial edition in the
+  source distribution.
+
+Any feedback is welcome.
+
+Emmanuel Beranger <e2(at!)beranger.com.fr>
+Johannes Mesa <frosla(at!)gmx.at>
+Peter Strempel <pstrempel(at!)t-online.de>

@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AnalyzeDialog</class>
+ <widget class="QMainWindow" name="AnalyzeDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>657</width>
+    <height>550</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Batch computer analysis</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_6" columnstretch="1,0">
+    <item row="4" column="0">
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="title">
+       <string>Job queue</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="1" column="1">
+        <widget class="QProgressBar" name="progressBar">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="value">
+          <number>0</number>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="QToolButton" name="openButton">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="toolTip">
+          <string>Observe progress in board window</string>
+         </property>
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="q4go.qrc">
+           <normaloff>:/ClientWindowGui/images/clientwindow/new_board.png</normaloff>:/ClientWindowGui/images/clientwindow/new_board.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1" colspan="3">
+        <widget class="QListView" name="jobView">
+         <property name="editTriggers">
+          <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
+         <property name="dragEnabled">
+          <bool>true</bool>
+         </property>
+         <property name="dragDropMode">
+          <enum>QAbstractItemView::InternalMove</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QToolButton" name="trashButton">
+         <property name="text">
+          <string>...</string>
+         </property>
+         <property name="icon">
+          <iconset resource="q4go.qrc">
+           <normaloff>:/images/trash.png</normaloff>:/images/trash.png</iconset>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>1</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="6" column="0" colspan="2">
+     <layout class="QHBoxLayout">
+      <property name="spacing">
+       <number>6</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <spacer name="Horizontal Spacing2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Expanding</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>224</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="closeButton">
+        <property name="text">
+         <string>&amp;Close</string>
+        </property>
+        <property name="shortcut">
+         <string/>
+        </property>
+        <property name="autoDefault">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="4" column="1">
+     <widget class="QGroupBox" name="groupBox_5">
+      <property name="title">
+       <string>Completed jobs</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_5">
+       <item row="0" column="1" colspan="2">
+        <widget class="QListView" name="doneView">
+         <property name="editTriggers">
+          <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
+         <property name="dragEnabled">
+          <bool>true</bool>
+         </property>
+         <property name="dragDropMode">
+          <enum>QAbstractItemView::InternalMove</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1" colspan="2">
+        <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <item>
+          <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>1</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QToolButton" name="trashDoneButton">
+           <property name="text">
+            <string>...</string>
+           </property>
+           <property name="icon">
+            <iconset resource="q4go.qrc">
+             <normaloff>:/images/trash.png</normaloff>:/images/trash.png</iconset>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="openDoneButton">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="toolTip">
+            <string>Observe progress in board window</string>
+           </property>
+           <property name="text">
+            <string>...</string>
+           </property>
+           <property name="icon">
+            <iconset resource="q4go.qrc">
+             <normaloff>:/ClientWindowGui/images/clientwindow/new_board.png</normaloff>:/ClientWindowGui/images/clientwindow/new_board.png</iconset>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="title">
+       <string>Analysis parameters</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_4">
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>Maximum number of lines to add:</string>
+         </property>
+         <property name="buddy">
+          <cstring>maxlinesEdit</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="secondsEdit">
+         <property name="maximumSize">
+          <size>
+           <width>50</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>5</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0" colspan="2">
+        <widget class="QCheckBox" name="commentsCheckBox">
+         <property name="text">
+          <string>Add evaluation info to comments</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="maxlinesEdit">
+         <property name="maximumSize">
+          <size>
+           <width>50</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="toolTip">
+          <string>Limits the number of variations added for engine lines</string>
+         </property>
+         <property name="text">
+          <string>10</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_2">
+         <property name="text">
+          <string>Number of seconds per move: </string>
+         </property>
+         <property name="buddy">
+          <cstring>secondsEdit</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="2">
+        <widget class="QWidget" name="widget" native="true">
+         <layout class="QGridLayout" name="gridLayout_3">
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_7">
+            <property name="text">
+             <string>Ruleset:</string>
+            </property>
+            <property name="buddy">
+             <cstring>rulesComboBox</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QComboBox" name="rulesComboBox">
+            <property name="toolTip">
+             <string>&lt;p&gt;Controls how to behave if the engine only supports a fixed value for komi.&lt;/p&gt;
+&lt;p&gt;If the analyzed game has negative komi, the game can be analyzed with reversed colors for better results.
+It is also possible to analyze with both normal and flipped komi, for example for zero-komi games.&lt;/p&gt;</string>
+            </property>
+            <property name="statusTip">
+             <string/>
+            </property>
+            <item>
+             <property name="text">
+              <string>Use best guess</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Japanese</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Chinese</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_6">
+            <property name="text">
+             <string>If fixed engine komi:</string>
+            </property>
+            <property name="buddy">
+             <cstring>komiComboBox</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QComboBox" name="komiComboBox">
+            <property name="toolTip">
+             <string>&lt;p&gt;Controls how to behave if the engine only supports a fixed value for komi.&lt;/p&gt;
+&lt;p&gt;If the analyzed game has negative komi, the game can be analyzed with reversed colors for better results.
+It is also possible to analyze with both normal and flipped komi, for example for zero-komi games.&lt;/p&gt;</string>
+            </property>
+            <property name="statusTip">
+             <string/>
+            </property>
+            <item>
+             <property name="text">
+              <string>Use default</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Swap if better</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Analyze both</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QGroupBox" name="groupBox">
+      <property name="title">
+       <string>File to analyse</string>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLineEdit" name="filenameEdit"/>
+         </item>
+         <item>
+          <widget class="QToolButton" name="fileselButton">
+           <property name="toolTip">
+            <string>Choose a file</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset resource="q4go.qrc">
+             <normaloff>:/ClientWindowGui/images/clientwindow/fileopen.png</normaloff>:/ClientWindowGui/images/clientwindow/fileopen.png</iconset>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="dbselButton">
+           <property name="toolTip">
+            <string>Choose a file from the database</string>
+           </property>
+           <property name="text">
+            <string>DB</string>
+           </property>
+           <property name="icon">
+            <iconset resource="q4go.qrc">
+             <normaloff>:/ClientWindowGui/images/clientwindow/fileopen.png</normaloff>:/ClientWindowGui/images/clientwindow/fileopen.png</iconset>
+           </property>
+           <property name="toolButtonStyle">
+            <enum>Qt::ToolButtonTextBesideIcon</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_5">
+         <item>
+          <widget class="QPushButton" name="enqueueButton">
+           <property name="toolTip">
+            <string>&lt;p&gt;Add the selected file to the job queue, using the current analysis parameters&lt;/p&gt;</string>
+           </property>
+           <property name="text">
+            <string>Add chosen &amp;file</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_5">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="enqueueDirButton">
+           <property name="toolTip">
+            <string>&lt;p&gt;Opens a directory selector. If a directory is chosen, all SGF files within it will be added to the job queue, using the current analysis parameters.&lt;/p&gt;</string>
+           </property>
+           <property name="text">
+            <string>Add entire &amp;directory</string>
+           </property>
+           <property name="icon">
+            <iconset resource="q4go.qrc">
+             <normaloff>:/ClientWindowGui/images/clientwindow/fileopen.png</normaloff>:/ClientWindowGui/images/clientwindow/fileopen.png</iconset>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="1" rowspan="3">
+     <widget class="QGroupBox" name="groupBox_4">
+      <property name="title">
+       <string>Engine status</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="4" column="0">
+        <spacer name="verticalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>1</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="1" column="0" colspan="4">
+        <widget class="QFrame" name="frame">
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QFormLayout" name="formLayout">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>Choose:</string>
+            </property>
+            <property name="buddy">
+             <cstring>engineComboBox</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QComboBox" name="engineComboBox">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <layout class="QHBoxLayout" name="horizontalLayout_7">
+            <item>
+             <widget class="QLabel" name="label">
+              <property name="text">
+               <string>Board size:</string>
+              </property>
+              <property name="buddy">
+               <cstring>boardsizeSpinBox</cstring>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSpinBox" name="boardsizeSpinBox">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimum">
+               <number>7</number>
+              </property>
+              <property name="maximum">
+               <number>39</number>
+              </property>
+              <property name="value">
+               <number>19</number>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>1</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item row="3" column="0" colspan="2">
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <item>
+             <widget class="QPushButton" name="engineStartButton">
+              <property name="text">
+               <string>Start engine</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="engineStopButton">
+              <property name="text">
+               <string>Stop engine</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QToolButton" name="enginePauseButton">
+              <property name="text">
+               <string>...</string>
+              </property>
+              <property name="icon">
+               <iconset resource="q4go.qrc">
+                <normaloff>:/images/pause.png</normaloff>:/images/pause.png</iconset>
+              </property>
+              <property name="checkable">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>1</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item row="5" column="0" colspan="2">
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <widget class="QLabel" name="label_5">
+              <property name="text">
+               <string>Status:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="engineStatusLabel">
+              <property name="text">
+               <string>stopped</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>1</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QPushButton" name="engineLogButton">
+              <property name="text">
+               <string>Show messages...</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="5" column="3">
+        <widget class="QPushButton" name="configureButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="toolTip">
+          <string>Open the preferences dialog to configure engines</string>
+         </property>
+         <property name="text">
+          <string>Configure engines...</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout_8">
+      <item>
+       <spacer name="horizontalSpacer_6">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>secondsEdit</tabstop>
+  <tabstop>maxlinesEdit</tabstop>
+  <tabstop>commentsCheckBox</tabstop>
+  <tabstop>filenameEdit</tabstop>
+  <tabstop>fileselButton</tabstop>
+  <tabstop>dbselButton</tabstop>
+  <tabstop>enqueueButton</tabstop>
+  <tabstop>boardsizeSpinBox</tabstop>
+  <tabstop>configureButton</tabstop>
+  <tabstop>engineComboBox</tabstop>
+  <tabstop>engineStartButton</tabstop>
+  <tabstop>engineStopButton</tabstop>
+  <tabstop>enginePauseButton</tabstop>
+  <tabstop>engineLogButton</tabstop>
+  <tabstop>jobView</tabstop>
+  <tabstop>trashButton</tabstop>
+  <tabstop>openButton</tabstop>
+  <tabstop>doneView</tabstop>
+  <tabstop>trashDoneButton</tabstop>
+  <tabstop>openDoneButton</tabstop>
+  <tabstop>closeButton</tabstop>
+ </tabstops>
+ <resources>
+  <include location="q4go.qrc"/>
+ </resources>
+ <connections/>
+</ui>

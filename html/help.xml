@@ -1,0 +1,840 @@
+<?xml version='1.0'?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN"
+"docbook/docbookx.dtd">
+<book>
+  <bookinfo>
+	<title>q5go</title>
+
+	<copyright>
+	  <year>2011-2019</year>
+	  <holder>Bernd Schmidt</holder>
+	</copyright>
+	<copyright>
+	  <year>2001-2003</year>
+	  <holder>Peter Strempel, Johannes Mesa, Emmanuel Beranger, Marin Ferecatu</holder>
+	</copyright>
+  </bookinfo>
+
+<!-- Preface -->
+  <preface>
+	<title>Introduction</title>
+
+	<para>q5go is a Go client and
+	<link linkend="sgf">SGF</link>
+
+	editor written with the Qt library, available for Linux,
+	Windows and Mac OS X.</para>
+
+	<para>Go is an ancient boardgame, very common in Japan, China
+	and Korea.</para>
+
+	<para>q5go can support translations. Check in the preferences
+	dialog if your language is available. If not, you might
+	consider translating q5go to your language. Read more about
+	<link linkend="language">translations</link>
+
+	in the preferences chapter.</para>
+
+	<para>This manual describes the basic usage of q5go.</para>
+
+	<note>
+	  <para>This manual was written against an older version of
+	  the program and is neither finished nor up-to-date.</para>
+	</note>
+  </preface>
+
+<!-- Chapter: q5go, the Program -->
+  <chapter>
+	<title>q5go, the Program</title>
+
+<!-- Section Launching -->
+	<section>
+	  <title>Launching</title>
+
+	  <para>You may simple use a desktop icon or command line
+	  input to launch the program. The command line syntax
+	  is</para>
+
+	  <para>
+	  <userinput>q5go</userinput>
+
+	  [options] [
+	  <filename>file</filename>
+
+	  ]</para>
+
+	  <table frame="all">
+		<title>Launch parameters</title>
+
+		<tgroup cols="2" align="left" colsep="1" rowsep="1">
+		  <thead>
+			<row>
+			  <entry>option</entry>
+
+			  <entry>meaning</entry>
+			</row>
+		  </thead>
+
+		  <tbody>
+			<row>
+			  <entry>
+				<userinput>-sgf</userinput>
+			  </entry>
+
+			  <entry>make new sgf file (or simple open a board to
+			  play)</entry>
+			</row>
+
+			<row>
+			  <entry>
+				<userinput>-sgf19</userinput>
+			  </entry>
+
+			  <entry>same but don't ask and open 19x19
+			  board</entry>
+			</row>
+
+			<row>
+			  <entry>
+				<userinput>-debug</userinput>
+			  </entry>
+
+			  <entry>open debug window and show status
+			  messages</entry>
+			</row>
+
+			<row>
+			  <entry>
+				<userinput>-desktop</userinput>
+			  </entry>
+
+			  <entry>use standard options from desktop</entry>
+			</row>
+
+			<row>
+			  <entry>
+				<filename>file</filename>
+			  </entry>
+
+			  <entry>open file (type
+			  <link linkend="sgf">SGF</link>
+
+			  )</entry>
+			</row>
+		  </tbody>
+		</tgroup>
+	  </table>
+	</section>
+
+<!-- Section Structure -->
+	<section>
+	  <title>Structure</title>
+
+	  <para>q5go has two main windows, one is the client window
+	  the other is the board window. Further, there is the debug window, too, but you may not need
+	  it.</para>
+
+	  <section>
+		<title>Client Window</title>
+
+		<anchor id="client" />
+
+		<para>While handling the connection to internet,
+		negotiating your match requests or looking for games to
+		observe this is your main window. This window appears on
+		starting the q5go program without any of the options
+		<userinput>-sgf</userinput>
+
+		,
+		<userinput>-sgf19</userinput>
+
+		or
+		<filename>filename</filename>
+
+		.</para>
+
+		<para>The client window consists of a players list in the
+		upper left, a games list in the upper right, talk windows
+		in the lower left, a restricted message window in the
+		lower right.</para>
+
+		<para>Further, there is a single edit line, further
+		referred as command line, on the lower edge and a bar on
+		the right edge containing the hostlist combo box on the
+		top.</para>
+
+		<para>Type
+		<userinput>#</userinput>
+
+		at the command line to get a list of internal
+		commands.</para>
+
+		<note>
+		  <para>Starting any text with
+		  <userinput>#</userinput>
+
+		  at the command line will parsed as internal command.
+		  Nothing is sent to host! E.g.
+		  <userinput>#+dbgwin</userinput>
+
+		  as internal command.</para>
+		</note>
+	  </section>
+
+	  <section>
+		<title>Board Window</title>
+
+		<para>The Go board is the most important part of the
+		program. It is embedded in the board window. Further the
+		board window contains clocks displaying the remaining
+		times for each player, edit tools and two comment edit
+		windows, a single line field to kibitz online games and a
+		multi line field for receiving comments during online
+		games or commenting games offline.</para>
+
+		<para>For fast startup, the command line option
+		<userinput>-sgf19</userinput>
+
+		,
+		<userinput>-sgf</userinput>
+
+		brings up a local (offline) board to edit a game. If
+		using
+		<filename>filename</filename>
+
+		then the file with name
+		<filename>filename</filename>
+
+		is loaded immediately. In any case, the main window will
+		not be shown.</para>
+
+		<note>
+		  <para>Starting any text with
+		  <userinput>#</userinput>
+
+		  at the single edit line will be sent to client window
+		  and parsed as a command (without
+		  <userinput>#</userinput>
+
+		  ). It is sent to host! Thus, starting with
+		  <userinput>##</userinput>
+
+		  will result in a internal command for the client
+		  window. E.g.
+		  <userinput>#stats</userinput>
+
+		  as host command or
+		  <userinput>##+dbgwin</userinput>
+
+		  as internal command.</para>
+		</note>
+	  </section>
+
+	  <section>
+		<title>Debug Window</title>
+
+		<para>For debugging purposes, the debug window can be
+		shown with the
+		<userinput>-debug</userinput>
+
+		startup option. However, this will set q5go in a debug
+		mode, too, which means the program will run
+		slower.</para>
+
+		<para>The debug window is always present but it's maybe
+		hidden. Thus, the debug window a log viewer for q5go.
+		Setting q5go to debug mode means logging more events,
+		especially logging all host responses but some internal
+		messages, too.</para>
+
+		<para>Therefore, only opening the debug window doesn't
+		slow down the q5go program.</para>
+
+		<para>In order to show the debug window there are other
+		options:</para>
+
+		<table frame="all">
+		  <title>Debug parameters</title>
+
+		  <tgroup cols="4" align="left" colsep="1" rowsep="1">
+			<thead>
+			  <row>
+				<entry>command</entry>
+
+				<entry>where to enter</entry>
+
+				<entry>set mode</entry>
+
+				<entry>debug window</entry>
+			  </row>
+			</thead>
+
+			<tbody>
+			  <row>
+				<entry>
+				  <userinput>-debug</userinput>
+				</entry>
+
+				<entry>when launching q5go</entry>
+
+				<entry>DEBUG</entry>
+
+				<entry>show</entry>
+			  </row>
+
+			  <row>
+				<entry>
+				  <userinput>#+dbg</userinput>
+				</entry>
+
+				<entry>command line</entry>
+
+				<entry>DEBUG</entry>
+
+				<entry>show</entry>
+			  </row>
+
+			  <row>
+				<entry>
+				  <userinput>#+dbgwin</userinput>
+				</entry>
+
+				<entry>command line</entry>
+
+				<entry>NORMAL</entry>
+
+				<entry>show</entry>
+			  </row>
+
+			  <row>
+				<entry>
+				  <userinput>#-dbg</userinput>
+				</entry>
+
+				<entry>command line</entry>
+
+				<entry>NORMAL</entry>
+
+				<entry>hide</entry>
+			  </row>
+			</tbody>
+		  </tgroup>
+		</table>
+
+		<para>command line is the bottom most line of the
+		<link linkend="client">client window</link>
+
+		.</para>
+	  </section>
+	</section>
+  </chapter>
+
+<!-- Chapter: Client Window Usage-->
+  <chapter>
+	<title>Client Window - Usage</title>
+
+	<note>
+	  <para>There are a lot of settings saved when q5go is getting
+	  closed. Thus, by running several instances of q5go the last
+	  closed instance of q5go supersedes the settings.</para>
+
+	  <para>This is different to closing a board window since all
+	  board settings are updated simultaneosly and they are saved
+	  when q5go quits.</para>
+	</note>
+
+<!-- Section Menus -->
+	<section>
+	  <title>Menus</title>
+
+<!-- Section: File menu -->
+	  <section>
+		<title>File</title>
+
+		<section>
+		  <title>New</title>
+
+		  <para>
+		  </para>
+		</section>
+	  </section>
+	</section>
+
+<!-- Section Mouse control -->
+	<section>
+	  <title>Mouse control</title>
+
+	  <para>
+	  </para>
+	</section>
+
+<!-- Section Keyboard control -->
+	<section>
+	  <title>Keyboard control</title>
+
+	  <para>
+	  </para>
+	</section>
+  </chapter>
+
+<!-- Chapter: Usage-->
+  <chapter>
+	<title>Board Window - Usage</title>
+
+<!-- Section Window focus -->
+	<section>
+	  <title>Window focus</title>
+
+	  <para>Once the comment editor has the window focus, and you
+	  want to continue using the
+	  <keycap>cursor</keycap>
+
+	  and
+	  <keycap>Home</keycap>
+
+	  /
+	  <keycap>End</keycap>
+
+	  keys for game navigation, just press
+	  <keycap>Escape</keycap>
+
+	  or click onto the board window to return the focus to the
+	  board again. With
+	  <keycap>Tab</keycap>
+
+	  you can switch from the board to the editor again.</para>
+
+	  <tip>
+		<para>If you have a wheelmouse, move the mouse over the
+		board and use the wheel for fast navigation.</para>
+	  </tip>
+	</section>
+
+<!-- Section Menus -->
+	<section>
+	  <title>Menus</title>
+
+<!-- Section: File menu -->
+	  <section>
+		<title>File</title>
+
+		<section>
+		  <title>New</title>
+
+		  <para>This lets you create a new SGF. You will be
+		  prompted for some basic game information (white player,
+		  black player, board size, komi, and handicap).</para>
+		</section>
+
+		<section>
+		  <title>Open</title>
+
+		  <para>This will open a stored SGF file into the current
+		  window. q5go will remember which directory you store
+		  your SGFs in and return there next time you perform the
+		  Open, Save, or Save As functions during the same
+		  session. The file does not have to have an .sgf
+		  extension as long as it is in the SGF format (sometimes
+		  downloaded files are saved without the
+		  extension).</para>
+		</section>
+
+		<section>
+		  <title>Save</title>
+
+		  <para>This will save the SGF you are currently editing.
+		  If the SGF has not yet been saved to a file, you will
+		  be prompted for a filename. If you want to save an
+		  existing file under another name or in another
+		  location, use the Save As option.</para>
+		</section>
+
+		<section>
+		  <title>Save As</title>
+
+		  <para>This will let you define which location and name
+		  the SGF file will be saved under. Use this to save
+		  edited, or alternate copies of SGFs without overwriting
+		  the original.</para>
+		</section>
+
+		<section>
+		  <title>Export ASCII</title>
+
+		  <para>q5go can also export an SGF position into ASCII
+		  format. Simply load the position you want to export and
+		  then select File - Export ASCII. This opens a window to
+		  show you what the exported ASCII file will look like.
+		  You can 'Close' window or 'Save' the displayed ASCII
+		  position (you will be prompted for a filename). Note
+		  that the currently displayed position, not the entire
+		  SGF file, is saved in ASCII format. The characters to
+		  display the position can be altered in the preferences
+		  dialog.</para>
+		</section>
+
+		<section>
+		  <title>Export image</title>
+
+		  <para>You can export the current board position to an
+		  image file. Simply load the position you want to save
+		  and select File - Export Image. You will be prompted
+		  for a filename to save the image under. Note that this
+		  does not produce a screenshot; it produces an image of
+		  the board position only. q5go supports common image
+		  formats like png, gif, jpeg, bmp. You can the exported
+		  file to alter in common graphic suits like Gimp or
+		  CorelDraw.</para>
+
+		  <tip>
+			<para>If you want to create a graphic of only a
+			limited board position, zoom the board and navigate
+			to the position you want to display.</para>
+		  </tip>
+		</section>
+
+		<section>
+		  <title>Exit</title>
+
+		  <para>This lets you exit the program.</para>
+		</section>
+	  </section>
+
+<!-- Section: Edit menu -->
+	  <section>
+		<title>Edit</title>
+
+		<section>
+		  <title>Cut</title>
+
+		  <para>To be written.</para>
+		</section>
+
+		<section>
+		  <title>Paste</title>
+
+		  <para>To be written.</para>
+		</section>
+
+		<section>
+		  <title>Paste as brother</title>
+
+		  <para>To be written.</para>
+		</section>
+
+		<section>
+		  <title>Delete</title>
+
+		  <para>To be written.</para>
+		</section>
+	  </section>
+
+<!-- Section: Navigation menu -->
+	  <section>
+		<title>Navigation</title>
+
+		<para>To be written.</para>
+	  </section>
+
+<!-- Section: Settings menu -->
+	  <section>
+		<title>Settings</title>
+
+		<section>
+		  <title>Preferences</title>
+
+		  <para>To be written.</para>
+		</section>
+
+		<section>
+		  <title>Game Info</title>
+
+		  <para>To be written.</para>
+		</section>
+	  </section>
+
+<!-- Section: View menu -->
+	  <section>
+		<title>View</title>
+
+		<para>To be written.</para>
+	  </section>
+
+<!-- Section: Help menu -->
+	  <section>
+		<title>Help</title>
+
+		<para>To be written.</para>
+	  </section>
+	</section>
+
+<!-- Section Preferences -->
+	<section>
+	  <title>Preferences</title>
+
+	  <para>The preferences dialog allows the user to adjust
+	  various aspects of the behaviour of the program.  It
+	  consists of several tabs which group settings thematically:
+	  <itemizedlist>
+	    <listitem><para>Main interface</para></listitem>
+	    <listitem><para>Board window</para></listitem>
+	    <listitem><para>Computer Go</para></listitem>
+	    <listitem><para>Go Servers</para></listitem>
+	  </itemizedlist>
+	  </para>
+	  <para>All settings are saved on exit, and reloaded the next time
+	  the program is started.</para>
+
+	  <!-- Section Interface -->
+	  <section>
+	    <title>Main Interface</title>
+
+	    <section><title>Sounds</title>
+	    <para>The first area in this tab contains a group of
+	    checkboxes to control when to play sounds.  Below it are
+	    four more sound-related checkboxes, these control whether
+	    sounds are enabled or muted when a new board window is
+	    opened.  This can be controlled independently four all
+	    types of boards, so for example you can disable sounds
+	    when editing an SGF file, but enable them when observing
+	    or playing an on-line match.  Here the visual settings can
+	    be changed. All settings are saved and reloaded when q5go
+	    starts up the next time.</para>
+
+	    </section>
+
+	    <section><title>Fonts</title>
+
+	    <para>In the Fonts section, you
+	    can configure the appearance of text in various contexts.
+	    There is the standard user-interface font, a font for text marks
+	    on the board, a font for comments, and for lists in the on-line
+	    client window.  These can be set quite freely.  For the clocks
+	    font it is recommended to choose a slightly larger font for better
+	    visibility, and the console font should be fixed-width to
+	    properly display server messages.</para>
+	    </section>
+
+		<anchor id="language" />
+
+		<section>
+		  <title>Language</title>
+
+		  <para>You can also choose the language for the user
+		  interface in the preferences dialog.  If 'System
+		  default' is selected, the program will attempt to
+		  determine the default language used in the OS
+		  installation.</para>
+		  <para>It is also possible to directly select one of
+		  the languages for which a translation is
+		  available.</para>
+
+		  <note>
+			<para>You have to restart q5go to let the language
+			change take effect.</para>
+		  </note>
+		  <note>
+		    <para>The translation files are somewhat outdated
+		    and you may encounter English text for some of the
+		    program's newer features.</para>
+		  </note>
+		</section>
+	  </section>
+
+	  <section>
+	    <title>Board Window</title>
+	    <section><title>Variation display</title>
+	    <para>This setting controls how to display variations on the Go
+	    board.  First, there is a graphical choice, to turn them off entirely,
+	    or alternatively display them as transparent ghost stones or
+	    letters.  Second, there is an alternative as to whether to indicate
+	    siblings (when there is an alternative to the current move on the
+	    board) or children (when there is more than one move following the
+	    current board position).</para>
+	    <para>SGF files may contain a setting to control variation display.
+	    The final setting related to variation display allows the user to
+	    either ignore the style found in SGF files, honour it, or ask if
+	    a file is opened in which a style is used that differs from the
+	    current settings.</para>
+	    </section>
+	    <section><title>Board</title>
+	    <para>This group of options contains a few settings regarding the
+	    visual appearance of the board.
+	    <itemizedlist>
+	      <listitem><para>The side bar can be shown (recommended) or hidden,
+	      and placed either at the left or the right.</para></listitem>
+	      <listitem><para>You can choose whether to display coordinates around the
+	      board, and whether to use the normal coordinate system (recommended)
+	      or alternatively the one found in SGF files.</para></listitem>
+	      <listitem><para>You can control whether a ghost stone should appear at the
+	      cursor position.</para></listitem>
+	      <listitem><para>The move number slider at the bottom of the
+	      board can be toggled on or off.</para></listitem>
+	      <listitem><para>Tooltips can be disabled.</para></listitem>
+	    </itemizedlist>
+	    </para>
+	    </section>
+
+	    <section><title>Visual appearance</title>
+	    <para>You can choose the graphics to be used as "wood" for the Go board,
+	    either from a set of five defaults, or by providing your own file.</para>
+	    <para>You can also choose between a few presets for the appearance of the
+	    stones.</para>
+	    </section>
+	  </section>
+
+	  <section>
+	    <title>Computer Go</title>
+	    <para>In this tab, you can configure AI engines to play against.  Enter a
+	    descriptive name (such as "GnuGo" or "Leela"), choose the path to the
+	    program's executable, and enter any command line arguments the
+	    program needs, then click the "Add" button.</para>
+	    <para>Configured engines are shown in the list on the
+	    right.  Clicking on an entry fills the entry fields, and the
+	    "Add" button turns into a "Change" button to update an existing entry.
+	    If the title is changed, a new entry can be added once more.</para>
+	  </section>
+
+	  <section>
+	    <title>Go Servers</title>
+	    <para>In this tab, you can configure Go servers.  The easiest way to
+	    do this is to click on one of the presets in the list, such as "-- IGS --",
+	    and then choose user name and password.  After also entering a title,
+	    you can click on "Add" to add the new connection to the list, and it
+	    will then appear in the client window's toolbar.
+	    </para>
+	    <note>
+	      <para>The defaults are very old, and realistically IGS is probably
+	      the only server still alive today.</para>
+	    </note>
+
+	    <para>You can choose whether games played or observed
+	    on-line should be auto-saved once they are
+	    finished.</para>
+	    <para>The list of watched and excluded players is also
+	    configurable.  However, this is probably more easily done
+	    in the client window directly, by right-clicking a player
+	    and toggling watch or exclude status.
+	    </para>
+	  </section>
+	</section>
+
+<!-- Section Keyboard control -->
+	<section>
+	  <title>Keyboard control</title>
+
+	  <para>q5go offers easy keyboard control to navigate through
+	  a game tree. Most menu items have a keyboard shortcut, as
+	  stated in the menu. The cursor keys offer the basic
+	  navigation: left and right move backwards and forwards
+	  through the game, while up and down can be used to switch
+	  between variations if they are present.</para>
+
+	  <para>Some additional functionality is available through keys
+	  not mentioned in the menus:</para>
+
+	  <itemizedlist>
+		<listitem>
+		  <para>
+		  <keycap>Escape</keycap>
+
+		  - Forces the window focus back to the board from the
+		  comment edit widget.</para>
+		</listitem>
+
+		<listitem>
+		  <para>
+			<keycap>Shift</keycap>
+
+			<itemizedlist>
+			  <listitem>
+				<para>When in normal mode, holding down the shift
+				key and
+				<emphasis>left</emphasis>
+
+				clicking moves to the
+				<emphasis>first</emphasis>
+
+				position of the
+				<emphasis>main variation branch</emphasis>
+
+				where the stone at this spot was played.</para>
+			  </listitem>
+
+			  <listitem>
+				<para>When in normal mode, holding down the shift
+				key and
+				<emphasis>right</emphasis>
+
+				clicking moves to the
+				<emphasis>next</emphasis>
+
+				position within the
+				<emphasis>current branch</emphasis>
+
+				where the stone at this spot was played.</para>
+			  </listitem>
+
+			  <listitem>
+				<para>When the letter mark tool is selected,
+				shift-click allows to customize the mark
+				text.</para>
+			  </listitem>
+			</itemizedlist>
+		  </para>
+		</listitem>
+
+		<listitem>
+		  <para>
+			<keycap>Control</keycap>
+		  </para>
+
+		  <para>In normal mode, to lookup all game positions of a
+		  spot, hold down the control key and left-click to find
+		  all moves at the given position. The search result will
+		  be displayed in a bookmark-like dialog. The lookup is
+		  performed in all variations after the current
+		  move.</para>
+
+		  <para>The difference to the shift key is, that this
+		  lookup searched through all following variations, while
+		  the shift key search only checks the main branch. Also,
+		  the shift key search finds the first position in the
+		  whole game, while the control key search looks up all
+		  moves, but only those after the current.</para>
+		</listitem>
+	  </itemizedlist>
+	</section>
+  </chapter>
+<!-- Chapter: File formats -->
+  <chapter>
+	<title>File formats</title>
+
+<!-- Section: SGF -->
+	<section>
+	  <title>SGF</title>
+
+	  <anchor id="sgf" />
+
+	  <para>SGF (Smart Game Format) files are a simple and
+	  effective way to store records of two-player board games.
+	  File information is saved as plain text, which makes the
+	  files very small and easy to handle or store. Game
+	  information is stored in a tree-based format - in other
+	  words, there is one main linear sequence of moves, with any
+	  alternatives that have been entered into the record
+	  branching away from that main sequence. These branches may
+	  have their own branches and so on.</para>
+
+	  <para>Because an SGF can contain much information -
+	  including but not limited to board setup, markings,
+	  variations, and extensive comments - programs such as q5go
+	  have been created. q5go provides a powerful, easy-to-use
+	  interface for creating, editing and viewing SGF
+	  files.</para>
+	</section>
+  </chapter>
+
+</book>
+
+
