@@ -12,7 +12,7 @@ title: q5go
 
 apps:
   q5go:
-    command: bin/q5go
+    command: build/q5go
 parts:
   q5go:
     # See 'snapcraft plugins'
@@ -21,7 +21,7 @@ parts:
     build-packages: [qtcreator, qtbase5-dev, qt5-qmake, cmake, libqt5svg5-dev, qtmultimedia5-dev]
     stage-packages: [qtcreator, qtbase5-dev, qt5-qmake, cmake, libqt5svg5-dev, qtmultimedia5-dev]
     organize:
-      q5go: bin/
+      q5go: build/
       q5go.1: man/man1/
 
 architectures:
